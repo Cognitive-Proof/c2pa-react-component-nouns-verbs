@@ -1,0 +1,52 @@
+{
+  "name": "c2pa-react-component-nouns-verbs",
+  "version": "0.1.0",
+  "description": "A level-override plugin for c2pa-react-component that replaces the L2 disclosure view.",
+  "type": "module",
+  "main": "./dist/c2pa-react-component-nouns-verbs.umd.cjs",
+  "module": "./dist/c2pa-react-component-nouns-verbs.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/c2pa-react-component-nouns-verbs.js",
+      "require": "./dist/c2pa-react-component-nouns-verbs.umd.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && vite build",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run"
+  },
+  "keywords": [
+    "c2pa",
+    "react",
+    "plugin"
+  ],
+  "author": "Matthew Rappard",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cognitive-Proof/c2pa-react-component-nouns-verbs.git"
+  },
+  "homepage": "https://github.com/Cognitive-Proof/c2pa-react-component-nouns-verbs#readme",
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.3.0",
+    "@vitejs/plugin-react": "^6.0.1",
+    "react": "^19.2.5",
+    "typescript": "^5.2.2",
+    "vite": "^8.0.1",
+    "vite-plugin-dts": "^5.1.1",
+    "vitest": "^5.0.1"
+  },
+  "dependencies": {
+    "c2pa-react-component-types": "^0.1.8"
+  }
+}
