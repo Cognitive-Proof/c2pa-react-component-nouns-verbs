@@ -1,17 +1,12 @@
 import type { LevelRendererProps } from 'c2pa-react-component-types'
-import { describeProvenance, manifestsOldestFirst } from './describeProvenance'
+import { nounsAndVerbsSentences } from './describeNounsAndVerbs'
 
 /**
  * The built-in L2 card, with a sentence summarising every source type and action across the ingredients,
  * followed by one sentence from each assertion plugin that implements `describe` (e.g. CAWG identities).
  */
 export function NounsVerbsL2({ Default, ...props }: LevelRendererProps) {
-  const store = props.manifest.manifestStore
-  const entries = store ? manifestsOldestFirst(store) : []
-  const sentences = [
-    describeProvenance(store),
-    ...(props.plugin ?? []).map((plugin) => plugin.describe?.(entries)),
-  ].filter((s): s is string => Boolean(s))
+  const sentences = nounsAndVerbsSentences(props.manifest, props.plugin)
 
   return (
     <Default {...props}>
